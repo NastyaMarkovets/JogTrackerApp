@@ -8,4 +8,5 @@ target 'JogTrackerApp' do
     pod 'Alamofire', '5.0.0-beta.3'
     pod 'BrightFutures'
     pod 'KeychainSwift'
+    pod 'SnapKit'
 end

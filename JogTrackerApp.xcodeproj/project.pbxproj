@@ -3,25 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
 		3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA20237DB2E60076EACC /* AppDelegate.swift */; };
-		3D90BA23237DB2E60076EACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA22237DB2E60076EACC /* ViewController.swift */; };
 		3D90BA26237DB2E60076EACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA24237DB2E60076EACC /* Main.storyboard */; };
 		3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA27237DB2E90076EACC /* Assets.xcassets */; };
 		3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */; };
+		3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */; };
+		3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */; };
+		3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */; };
+		3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */; };
+		3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA37237DB5B60076EACC /* DeviceType.swift */; };
+		3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA38237DB5B60076EACC /* KeyboardListener.swift */; };
+		3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA49237DB6280076EACC /* UserAccountManager.swift */; };
+		3D90BA54237DB6320076EACC /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA4E237DB6320076EACC /* AuthorizationRouter.swift */; };
+		3D90BA55237DB6320076EACC /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA4F237DB6320076EACC /* NetworkRouter.swift */; };
+		3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA51237DB6320076EACC /* NetworkClient.swift */; };
+		3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA52237DB6320076EACC /* AuthorizationClient.swift */; };
+		3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */; };
+		3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* LoginPresenter.swift */; };
+		3D90BA71237DCCF90076EACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
 		3D90BA1D237DB2E60076EACC /* JogTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D90BA20237DB2E60076EACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D90BA22237DB2E60076EACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D90BA25237DB2E60076EACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D90BA27237DB2E90076EACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D90BA2A237DB2E90076EACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D90BA2C237DB2E90076EACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		3D90BA37237DB5B60076EACC /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		3D90BA38237DB5B60076EACC /* KeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardListener.swift; sourceTree = "<group>"; };
+		3D90BA49237DB6280076EACC /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
+		3D90BA4E237DB6320076EACC /* AuthorizationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		3D90BA4F237DB6320076EACC /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		3D90BA51237DB6320076EACC /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		3D90BA52237DB6320076EACC /* AuthorizationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationClient.swift; sourceTree = "<group>"; };
+		3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientsFactory.swift; sourceTree = "<group>"; };
+		3D90BA5B237DB6400076EACC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		3D90BA70237DCCF80076EACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.debug.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +71,8 @@
 			children = (
 				3D90BA1F237DB2E60076EACC /* JogTrackerApp */,
 				3D90BA1E237DB2E60076EACC /* Products */,
+				F577311D21528C3EE7E40E3A /* Pods */,
+				76F9DA1C1E1F1729ED24EDE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +87,132 @@
 		3D90BA1F237DB2E60076EACC /* JogTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA20237DB2E60076EACC /* AppDelegate.swift */,
-				3D90BA22237DB2E60076EACC /* ViewController.swift */,
+				3D90BA4C237DB6320076EACC /* Networking */,
+				3D90BA47237DB6280076EACC /* Manager */,
+				3D90BA40237DB6140076EACC /* Model */,
+				3D90BA59237DB6400076EACC /* Presentation */,
+				3D90BA32237DB5B60076EACC /* Extension */,
 				3D90BA24237DB2E60076EACC /* Main.storyboard */,
-				3D90BA27237DB2E90076EACC /* Assets.xcassets */,
 				3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */,
+				3D90BA20237DB2E60076EACC /* AppDelegate.swift */,
+				3D90BA27237DB2E90076EACC /* Assets.xcassets */,
 				3D90BA2C237DB2E90076EACC /* Info.plist */,
 			);
 			path = JogTrackerApp;
+			sourceTree = "<group>";
+		};
+		3D90BA32237DB5B60076EACC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */,
+				3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */,
+				3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */,
+				3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */,
+				3D90BA37237DB5B60076EACC /* DeviceType.swift */,
+				3D90BA38237DB5B60076EACC /* KeyboardListener.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D90BA40237DB6140076EACC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA70237DCCF80076EACC /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D90BA47237DB6280076EACC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA49237DB6280076EACC /* UserAccountManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3D90BA4C237DB6320076EACC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA4D237DB6320076EACC /* Routers */,
+				3D90BA50237DB6320076EACC /* Clients */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3D90BA4D237DB6320076EACC /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA4E237DB6320076EACC /* AuthorizationRouter.swift */,
+				3D90BA4F237DB6320076EACC /* NetworkRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		3D90BA50237DB6320076EACC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA51237DB6320076EACC /* NetworkClient.swift */,
+				3D90BA52237DB6320076EACC /* AuthorizationClient.swift */,
+				3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		3D90BA59237DB6400076EACC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA6F237DC1A00076EACC /* Layout */,
+				3D90BA5A237DB6400076EACC /* Presenters */,
+				3D90BA6E237DC14F0076EACC /* Controllers */,
+				3D90BA5C237DB6400076EACC /* Cells */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3D90BA5A237DB6400076EACC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA5B237DB6400076EACC /* LoginPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		3D90BA5C237DB6400076EACC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D90BA6E237DC14F0076EACC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3D90BA6F237DC1A00076EACC /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		76F9DA1C1E1F1729ED24EDE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F577311D21528C3EE7E40E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */,
+				039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D90BA2F237DB2E90076EACC /* Build configuration list for PBXNativeTarget "JogTrackerApp" */;
 			buildPhases = (
+				CF87989F3D21576A309D0327 /* [CP] Check Pods Manifest.lock */,
 				3D90BA19237DB2E60076EACC /* Sources */,
 				3D90BA1A237DB2E60076EACC /* Frameworks */,
 				3D90BA1B237DB2E60076EACC /* Resources */,
+				E8486AF8171D853F53E7D192 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +283,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF87989F3D21576A309D0327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JogTrackerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8486AF8171D853F53E7D192 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D90BA19237DB2E60076EACC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D90BA23237DB2E60076EACC /* ViewController.swift in Sources */,
+				3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */,
+				3D90BA54237DB6320076EACC /* AuthorizationRouter.swift in Sources */,
+				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
+				3D90BA55237DB6320076EACC /* NetworkRouter.swift in Sources */,
+				3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */,
+				3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */,
+				3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */,
+				3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */,
+				3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */,
+				3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */,
+				3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */,
+				3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */,
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
+				3D90BA71237DCCF90076EACC /* User.swift in Sources */,
+				3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +488,7 @@
 		};
 		3D90BA30237DB2E90076EACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +507,7 @@
 		};
 		3D90BA31237DB2E90076EACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

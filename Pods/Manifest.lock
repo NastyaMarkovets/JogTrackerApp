@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.0.0-beta.3)
+  - BrightFutures (8.0.0)
+  - KeychainSwift (18.0.0)
+
+DEPENDENCIES:
+  - Alamofire (= 5.0.0-beta.3)
+  - BrightFutures
+  - KeychainSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BrightFutures
+    - KeychainSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
+  KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
+
+PODFILE CHECKSUM: a38c316ae83ca629055a7f3b2b153c8049961995
+
+COCOAPODS: 1.8.4

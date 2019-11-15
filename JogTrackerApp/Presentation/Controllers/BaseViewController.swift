@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
         static let navigationBarHeight: CGFloat = 77
         static let contentSpacing: CGFloat = 20
         static let sideInset: CGFloat = 25
+        static let filterWidth: CGFloat = 39
     }
     
     private let baseNavigationBarView: UIView = {
@@ -34,15 +35,34 @@ class BaseViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "menu"), for: .normal)
         button.tintColor = .white
-        button.addTarget(self, action: #selector(didTapedMenu), for: .touchUpInside)
+        button.adjustsImageWhenHighlighted = false
+        button.addTarget(self, action: #selector(didTapedRightButton), for: .touchUpInside)
         return button
     }()
     
-    enum RightButtonType {
+    private let filterButton: UIButton = {
+        let button = UIButton()
+        button.adjustsImageWhenHighlighted = false
+        button.addTarget(self, action: #selector(didTapedFilterButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private enum RightButtonType {
         case menu
         case cancel
     }
-    var rightButtonType: RightButtonType = .menu
+    private var rightButtonType: RightButtonType = .menu
+    private var filterIsNeeded = false {
+        didSet {
+            filterButton.isHidden = !filterIsNeeded
+        }
+    }
+    private var filterIsActive = false {
+        didSet {
+            filterIsActive ? filterButton.setImage(UIImage(named: "filter-active"), for: .normal)
+                            : filterButton.setImage(UIImage(named: "filter"), for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +76,7 @@ class BaseViewController: UIViewController {
         view.addSubview(baseNavigationBarView)
         baseNavigationBarView.addSubview(logoImageView)
         baseNavigationBarView.addSubview(rightButton)
+        baseNavigationBarView.addSubview(filterButton)
     }
     
     private func setupConstraints() {
@@ -71,8 +92,28 @@ class BaseViewController: UIViewController {
         
         rightButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(Dimensions.sideInset)
-            $0.bottom.equalToSuperview().inset(Dimensions.sideInset)
+            $0.centerY.equalTo(logoImageView)
         }
+        
+        filterButton.snp.makeConstraints {
+            $0.trailing.equalTo(rightButton.snp.leading).offset(-Dimensions.filterWidth)
+            $0.centerY.equalTo(logoImageView)
+            $0.width.equalTo(Dimensions.filterWidth)
+        }
+    }
+    
+    @objc private func didTapedRightButton() {
+        switch rightButtonType {
+        case .menu:
+            let menuViewController = MenuViewController()
+            navigationController?.pushViewController(menuViewController, animated: true)
+        case .cancel:
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @objc private func didTapedFilterButton() {
+        filterIsActive = !filterIsActive
     }
     
     func setupMenuNavigationBar() {
@@ -83,14 +124,9 @@ class BaseViewController: UIViewController {
         rightButtonType = .cancel
     }
     
-    @objc private func didTapedMenu() {
-        switch rightButtonType {
-        case .menu:
-            let menuViewController = MenuViewController()
-            navigationController?.pushViewController(menuViewController, animated: true)
-        case .cancel:
-            navigationController?.popViewController(animated: true)
-        }
+    func addFilter() {
+        filterIsNeeded = true
+        filterIsActive = false
     }
 
 }

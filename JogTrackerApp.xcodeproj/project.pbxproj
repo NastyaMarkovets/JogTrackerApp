@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
+		3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */; };
 		3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA20237DB2E60076EACC /* AppDelegate.swift */; };
 		3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA27237DB2E90076EACC /* Assets.xcassets */; };
 		3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */; };
@@ -25,12 +26,18 @@
 		3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */; };
 		3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* LoginPresenter.swift */; };
 		3D90BA71237DCCF90076EACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* User.swift */; };
-		3D90BA73237DDA140076EACC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA72237DDA140076EACC /* BaseViewController.swift */; };
+		3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA72237DDA140076EACC /* MainViewController.swift */; };
 		3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA78237DEECB0076EACC /* MenuViewController.swift */; };
+		3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */; };
+		3D90BA81237F2AE60076EACC /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */; };
+		3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA8F237F41B90076EACC /* JogsViewController.swift */; };
+		3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */; };
+		3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA93237F4B580076EACC /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		3D90BA1D237DB2E60076EACC /* JogTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D90BA20237DB2E60076EACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D90BA27237DB2E90076EACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,8 +57,13 @@
 		3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientsFactory.swift; sourceTree = "<group>"; };
 		3D90BA5B237DB6400076EACC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		3D90BA70237DCCF80076EACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		3D90BA72237DDA140076EACC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3D90BA72237DDA140076EACC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D90BA78237DEECB0076EACC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		3D90BA8F237F41B90076EACC /* JogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewController.swift; sourceTree = "<group>"; };
+		3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA93237F4B580076EACC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.debug.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +121,7 @@
 				3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */,
 				3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */,
 				3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */,
+				3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */,
 				3D90BA37237DB5B60076EACC /* DeviceType.swift */,
 				3D90BA38237DB5B60076EACC /* KeyboardListener.swift */,
 			);
@@ -181,6 +194,8 @@
 		3D90BA5C237DB6400076EACC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */,
+				3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -188,8 +203,10 @@
 		3D90BA6E237DC14F0076EACC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA72237DDA140076EACC /* BaseViewController.swift */,
+				3D90BA72237DDA140076EACC /* MainViewController.swift */,
 				3D90BA78237DEECB0076EACC /* MenuViewController.swift */,
+				3D90BA8F237F41B90076EACC /* JogsViewController.swift */,
+				3D90BA93237F4B580076EACC /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +214,7 @@
 		3D90BA6F237DC1A00076EACC /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -278,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D90BA81237F2AE60076EACC /* MenuTableViewCell.xib in Resources */,
 				3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */,
 				3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */,
 			);
@@ -332,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */,
 				3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */,
 				3D90BA54237DB6320076EACC /* AuthorizationRouter.swift in Sources */,
 				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
@@ -342,12 +362,16 @@
 				3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */,
 				3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */,
 				3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */,
+				3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */,
 				3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */,
 				3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */,
+				3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */,
 				3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */,
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
+				3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */,
 				3D90BA71237DCCF90076EACC /* User.swift in Sources */,
-				3D90BA73237DDA140076EACC /* BaseViewController.swift in Sources */,
+				3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */,
+				3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */,
 				3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

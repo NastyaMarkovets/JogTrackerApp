@@ -1,15 +1,18 @@
 //
-//  UITableViewCell+Extension.swift
+//  CustomNavigationBar.swift
 //  JogTrackerApp
 //
-//  Created by Anastasia Markovets on 11/14/19.
+//  Created by Anastasia Markovets on 11/16/19.
 //  Copyright © 2019 Lonely Tree Std. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class BaseViewController: UIViewController {
+protocol RightButtonActionProtocol: class {
+    func clickRightButton()
+}
+
+class CustomNavigationBar: UIView {
     
     private enum Dimensions {
         static let navigationBarHeight: CGFloat = 77
@@ -17,12 +20,6 @@ class BaseViewController: UIViewController {
         static let sideInset: CGFloat = 25
         static let filterWidth: CGFloat = 39
     }
-    
-    private let baseNavigationBarView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.Base.appleGreen
-        return view
-    }()
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -46,12 +43,6 @@ class BaseViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapedFilterButton), for: .touchUpInside)
         return button
     }()
-    
-    private enum RightButtonType {
-        case menu
-        case cancel
-    }
-    private var rightButtonType: RightButtonType = .menu
     private var filterIsNeeded = false {
         didSet {
             filterButton.isHidden = !filterIsNeeded
@@ -60,28 +51,30 @@ class BaseViewController: UIViewController {
     private var filterIsActive = false {
         didSet {
             filterIsActive ? filterButton.setImage(UIImage(named: "filter-active"), for: .normal)
-                            : filterButton.setImage(UIImage(named: "filter"), for: .normal)
+                : filterButton.setImage(UIImage(named: "filter"), for: .normal)
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.Base.backgroundColor
-        self.navigationController?.isNavigationBarHidden = true
+    weak var rightButtonDelegate: RightButtonActionProtocol?
+
+    init() {
+        super.init(frame: .zero)
         addSubviews()
         setupConstraints()
+        backgroundColor = UIColor.Base.appleGreen
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func addSubviews() {
-        view.addSubview(baseNavigationBarView)
-        baseNavigationBarView.addSubview(logoImageView)
-        baseNavigationBarView.addSubview(rightButton)
-        baseNavigationBarView.addSubview(filterButton)
+        addSubview(logoImageView)
+        addSubview(rightButton)
+        addSubview(filterButton)
     }
     
     private func setupConstraints() {
-        baseNavigationBarView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+        snp.makeConstraints {
             $0.height.equalTo(Dimensions.navigationBarHeight + UIApplication.shared.statusBarFrame.height)
         }
         
@@ -103,13 +96,7 @@ class BaseViewController: UIViewController {
     }
     
     @objc private func didTapedRightButton() {
-        switch rightButtonType {
-        case .menu:
-            let menuViewController = MenuViewController()
-            navigationController?.pushViewController(menuViewController, animated: true)
-        case .cancel:
-            navigationController?.popViewController(animated: true)
-        }
+        rightButtonDelegate?.clickRightButton()
     }
     
     @objc private func didTapedFilterButton() {
@@ -117,11 +104,10 @@ class BaseViewController: UIViewController {
     }
     
     func setupMenuNavigationBar() {
-        baseNavigationBarView.backgroundColor = .white
+        backgroundColor = .white
         rightButton.setImage(UIImage(named: "cancel"), for: .normal)
         rightButton.tintColor = UIColor.Base.greyish
         logoImageView.tintColor = UIColor.Base.appleGreen
-        rightButtonType = .cancel
     }
     
     func addFilter() {

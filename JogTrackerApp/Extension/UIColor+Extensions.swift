@@ -12,11 +12,9 @@ extension UIColor {
     
     struct Base {
         static let backgroundColor = UIColor.white
-        static let accentColor = UIColor.lightGray
-        static let textColor = UIColor.black
-        static let subtextColor = UIColor.darkGray
-        static let selectionColor = accentColor.withAlphaComponent(0.2)
-        static let errorColor = UIColor.red
+        static let textColor = UIColor(70, 67, 71)
+        static let appleGreen = UIColor(126, 211, 33)
+        static let greyish = UIColor(176, 171, 171)
     }
 
     convenience init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Double? = 1.0) {

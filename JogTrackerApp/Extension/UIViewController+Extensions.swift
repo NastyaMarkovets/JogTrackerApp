@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIViewController {
     
@@ -29,11 +30,9 @@ extension UIViewController {
     }
     
     func constraintViewEqual(holderView: UIView, view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.leadingAnchor.constraint(equalTo: holderView.leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: holderView.trailingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: holderView.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: holderView.bottomAnchor).isActive = true
+        view.snp.makeConstraints {
+            $0.edges.equalTo(holderView)
+        }
     }
     
 }

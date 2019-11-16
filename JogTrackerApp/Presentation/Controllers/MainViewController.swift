@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     private let customNavigationBar = CustomNavigationBar()
     private let contentView = UIView()
     private var mainViewController: UIViewController = JogsViewController()
+    private let menuViewController = MenuViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,6 @@ extension MainViewController: MenuItemsSelectionProtocol {
 
 extension MainViewController: RightButtonActionProtocol {
     func clickRightButton() {
-        let menuViewController = MenuViewController()
         menuViewController.menuItemsSelectionDelegate = self
         navigationController?.pushViewController(menuViewController, animated: true)
     }

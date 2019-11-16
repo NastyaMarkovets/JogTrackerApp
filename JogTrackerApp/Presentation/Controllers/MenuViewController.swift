@@ -18,31 +18,41 @@ class MenuViewController: UIViewController {
         static let cellHeight: CGFloat = 71
         static let tableViewMultiplier: CGFloat = 0.8
     }
+    private enum MenuItem: String, CaseIterable {
+        case jogs = "Jogs"
+        case info = "Info"
+        case contactUs = "Contact Us"
+        
+        func getIndex() -> Int? {
+            return MenuItem.allCases.firstIndex { self == $0 }
+        }
+    }
     private let customNavigationBar = CustomNavigationBar()
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         return tableView
     }()
-    private enum MenuItems: String, CaseIterable {
-        case jogs = "Jogs"
-        case info = "Info"
-        case contactUs = "Contact Us"
-    }
-    private let menuItems = MenuItems.allCases
+    private let menuItems = MenuItem.allCases
+    private var selectedMenuItem: MenuItem = .jogs
     weak var menuItemsSelectionDelegate: MenuItemsSelectionProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.Base.backgroundColor
         customNavigationBar.setupMenuNavigationBar()
-        
         tableView.delegate = self
         tableView.dataSource = self
         customNavigationBar.rightButtonDelegate = self
         registerNib()
         addSubviews()
         setupConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let index = selectedMenuItem.getIndex() else { return }
+        tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .none)
     }
     
     private func addSubviews() {
@@ -91,9 +101,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedMenuItem = menuItems[indexPath.row]
-        var presentingController: UIViewController?
+        guard selectedMenuItem != menuItems[indexPath.row] else {
+            navigationController?.popViewController(animated: true)
+            return
+        }
         
+        selectedMenuItem = menuItems[indexPath.row]
+        var presentingController: UIViewController?
         switch selectedMenuItem {
         case .jogs:
             presentingController = JogsViewController()

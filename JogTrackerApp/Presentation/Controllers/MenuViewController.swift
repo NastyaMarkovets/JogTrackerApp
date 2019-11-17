@@ -80,12 +80,6 @@ class MenuViewController: UIViewController {
     }
 }
 
-extension MenuViewController: RightButtonActionProtocol {
-    func clickRightButton() {
-        navigationController?.popViewController(animated: true)
-    }
-}
-
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
@@ -125,4 +119,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+}
+
+extension MenuViewController: RightButtonActionProtocol {
+    func clickRightButton() {
+        navigationController?.popViewController(animated: true)
+    }
 }

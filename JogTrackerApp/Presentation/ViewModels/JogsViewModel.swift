@@ -8,12 +8,12 @@
 
 import Foundation
 
-class AuthorizationViewModel {
-    
+class JogsViewModel {
     private let authorizationClient = NetworkClientsFactory.shared.authorizationClient
     //private let userUuid = UUID().uuidString
     private let mockedUserUuid = "hello"
     let accessToken = UserAccountManager.accessToken
+    var existingJogs: [Jog]?
     
     func authorizeUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
         authorizationClient.authorize(uuid: mockedUserUuid).onSuccess { response in

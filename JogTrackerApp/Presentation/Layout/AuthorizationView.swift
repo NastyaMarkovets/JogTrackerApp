@@ -21,10 +21,10 @@ class AuthorizationView: UIView {
         static let spacing: CGFloat = 103
     }
     
-    private let bearFaceImageView: UIImageView = {
+    private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "bear-face")
-        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -41,16 +41,18 @@ class AuthorizationView: UIView {
     }
     
     private func prepareView() {
-        addSubview(bearFaceImageView)
+        backgroundColor = .white
+        
+        addSubview(iconImageView)
         addSubview(letMeInButton)
         
-        bearFaceImageView.snp.makeConstraints {
+        iconImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(Dimensions.sideInset)
         }
         letMeInButton.snp.makeConstraints {
-            $0.top.equalTo(bearFaceImageView.snp.bottom).offset(Dimensions.spacing)
-            $0.leading.trailing.equalTo(bearFaceImageView)
+            $0.top.equalTo(iconImageView.snp.bottom).offset(Dimensions.spacing)
+            $0.leading.trailing.equalTo(iconImageView)
             $0.bottom.equalToSuperview()
         }
         

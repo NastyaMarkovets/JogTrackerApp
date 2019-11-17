@@ -10,6 +10,10 @@
 		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
 		3D03AA292381468C007F8BBD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA282381468C007F8BBD /* Response.swift */; };
 		3D03AA2B238172DD007F8BBD /* JogsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2A238172DD007F8BBD /* JogsClient.swift */; };
+		3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2C23817D7B007F8BBD /* Jog.swift */; };
+		3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */; };
+		3D03AA312381822C007F8BBD /* JogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */; };
+		3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */; };
 		3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */; };
 		3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCD238084FB006980B9 /* CustomButton.swift */; };
 		3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */; };
@@ -28,7 +32,7 @@
 		3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA51237DB6320076EACC /* NetworkClient.swift */; };
 		3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA52237DB6320076EACC /* AuthorizationClient.swift */; };
 		3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */; };
-		3D90BA62237DB6400076EACC /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */; };
+		3D90BA62237DB6400076EACC /* JogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* JogsViewModel.swift */; };
 		3D90BA71237DCCF90076EACC /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* UserResponse.swift */; };
 		3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA72237DDA140076EACC /* MainViewController.swift */; };
 		3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA78237DEECB0076EACC /* MenuViewController.swift */; };
@@ -43,6 +47,10 @@
 		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
 		3D03AA282381468C007F8BBD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3D03AA2A238172DD007F8BBD /* JogsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsClient.swift; sourceTree = "<group>"; };
+		3D03AA2C23817D7B007F8BBD /* Jog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
+		3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
+		3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogTableViewCell.xib; sourceTree = "<group>"; };
+		3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJogsListView.swift; sourceTree = "<group>"; };
 		3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		3D87CDCD238084FB006980B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
@@ -63,7 +71,7 @@
 		3D90BA51237DB6320076EACC /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		3D90BA52237DB6320076EACC /* AuthorizationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationClient.swift; sourceTree = "<group>"; };
 		3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientsFactory.swift; sourceTree = "<group>"; };
-		3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		3D90BA5B237DB6400076EACC /* JogsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogsViewModel.swift; sourceTree = "<group>"; };
 		3D90BA70237DCCF80076EACC /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		3D90BA72237DDA140076EACC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D90BA78237DEECB0076EACC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 			children = (
 				3D90BA70237DCCF80076EACC /* UserResponse.swift */,
 				3D03AA282381468C007F8BBD /* Response.swift */,
+				3D03AA2C23817D7B007F8BBD /* Jog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,19 +195,19 @@
 			isa = PBXGroup;
 			children = (
 				3D90BA6F237DC1A00076EACC /* Layout */,
-				3D90BA5A237DB6400076EACC /* Presenters */,
+				3D90BA5A237DB6400076EACC /* ViewModels */,
 				3D90BA6E237DC14F0076EACC /* Controllers */,
 				3D90BA5C237DB6400076EACC /* Cells */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		3D90BA5A237DB6400076EACC /* Presenters */ = {
+		3D90BA5A237DB6400076EACC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */,
+				3D90BA5B237DB6400076EACC /* JogsViewModel.swift */,
 			);
-			path = Presenters;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		3D90BA5C237DB6400076EACC /* Cells */ = {
@@ -206,6 +215,8 @@
 			children = (
 				3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */,
 				3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */,
+				3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */,
+				3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 				3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */,
 				3D87CDCD238084FB006980B9 /* CustomButton.swift */,
 				3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */,
+				3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -308,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D03AA312381822C007F8BBD /* JogTableViewCell.xib in Resources */,
 				3D90BA81237F2AE60076EACC /* MenuTableViewCell.xib in Resources */,
 				3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */,
 				3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */,
@@ -364,14 +377,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */,
-				3D90BA62237DB6400076EACC /* AuthorizationViewModel.swift in Sources */,
+				3D90BA62237DB6400076EACC /* JogsViewModel.swift in Sources */,
 				3D90BA54237DB6320076EACC /* JogsApi.swift in Sources */,
 				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
+				3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */,
 				3D90BA55237DB6320076EACC /* JogsBaseApi.swift in Sources */,
 				3D03AA292381468C007F8BBD /* Response.swift in Sources */,
 				3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */,
 				3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */,
 				3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */,
+				3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */,
 				3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */,
 				3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */,
 				3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */,
@@ -385,6 +400,7 @@
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
 				3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */,
 				3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */,
+				3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */,
 				3D90BA71237DCCF90076EACC /* UserResponse.swift in Sources */,
 				3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */,
 				3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */,

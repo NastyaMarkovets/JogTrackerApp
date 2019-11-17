@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     private let customNavigationBar = CustomNavigationBar()
     private let contentView = UIView()
     private let menuViewController = MenuViewController()
-    var rootViewController: UIViewController = JogsViewController()
+    private var rootViewController: UIViewController = JogsViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()

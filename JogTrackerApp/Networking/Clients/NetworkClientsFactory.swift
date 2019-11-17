@@ -13,4 +13,5 @@ class NetworkClientsFactory {
     static let shared = NetworkClientsFactory()
 
     lazy var authorizationClient: AuthorizationClientProtocol = AuthorizationClient()
+    lazy var jogsClient: JogsClientProtocol = JogsClient()
 }

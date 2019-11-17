@@ -20,7 +20,7 @@ class InfoViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont.Base.titleFont
         label.textColor = UIColor.Base.appleGreen
         label.text = "Info".uppercased()
         return label
@@ -28,7 +28,7 @@ class InfoViewController: UIViewController {
     
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        textView.font = UIFont.Base.descriptionFont
         textView.textColor = UIColor.Base.textColor
         textView.isSelectable = false
         textView.backgroundColor = .clear

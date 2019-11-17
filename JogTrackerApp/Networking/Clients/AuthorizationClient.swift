@@ -7,17 +7,16 @@
 //
 
 import Foundation
-import Alamofire
 import BrightFutures
 
 protocol AuthorizationClientProtocol {
-    func login(uuid: String) -> Future<Response, NetworkRequestError>
+    func authorize(uuid: String) -> Future<Response, NetworkRequestError>
 }
 
 class AuthorizationClient: NetworkClient, AuthorizationClientProtocol {
     
-    func login(uuid: String) -> Future<Response, NetworkRequestError> {
-        return performRequest(route: AuthorizationRouter.login(uuid: uuid))
+    func authorize(uuid: String) -> Future<Response, NetworkRequestError> {
+        return performRequest(route: JogsApi.login(uuid: uuid))
     }
 
 }

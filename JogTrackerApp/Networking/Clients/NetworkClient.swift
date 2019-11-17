@@ -19,12 +19,12 @@ protocol MockedModelProtocol {
 }
 
 protocol NetworkClientProtocol {
-    func performRequest<T: Decodable>(route: NetworkRouter, decoder: JSONDecoder) -> Future<T, NetworkRequestError>
+    func performRequest<T: Decodable>(route: JogsBaseApi, decoder: JSONDecoder) -> Future<T, NetworkRequestError>
 }
 
 class NetworkClient: NetworkClientProtocol {
 
-    func performRequest<T: Decodable>(route: NetworkRouter,
+    func performRequest<T: Decodable>(route: JogsBaseApi,
                                       decoder: JSONDecoder = JSONDecoder()) -> Future<T, NetworkRequestError> {
         return Future { complete in
             AF.request(route).responseDecodable(decoder: decoder,

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum AuthorizationRouter: NetworkRouter {    
+enum JogsApi: JogsBaseApi {    
 
     case login(uuid: String)
     case addNewJog

@@ -15,8 +15,8 @@ class AuthorizationViewModel {
     private let mockedUserUuid = "hello"
     let accessToken = UserAccountManager.accessToken
     
-    func loginUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
-        authorizationClient.login(uuid: mockedUserUuid).onSuccess { response in
+    func authorizeUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
+        authorizationClient.authorize(uuid: mockedUserUuid).onSuccess { response in
             UserAccountManager.accessToken = response.response.accessToken
             success()
         }.onFailure { error in

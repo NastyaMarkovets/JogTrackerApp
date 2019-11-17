@@ -29,7 +29,7 @@ enum ContentType: String {
     case json = "application/json"
 }
 
-protocol NetworkRouter: URLRequestConvertible {
+protocol JogsBaseApi: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
@@ -37,7 +37,7 @@ protocol NetworkRouter: URLRequestConvertible {
 }
 
 
-extension NetworkRouter {
+extension JogsBaseApi {
 
     func asURLRequest() throws -> URLRequest {
         let baseUrl = Server.Production.baseURL.appending(path)

@@ -40,7 +40,7 @@ class JogsViewController: UIViewController {
 
 extension JogsViewController: AuthorizathionButtonProtocol {
     func clickAuthorization() {
-        authorizationViewModel.loginUser(success: { [weak self] in
+        authorizationViewModel.authorizeUser(success: { [weak self] in
             guard let self = self else { return }
             self.authorizationView.isHidden = true
         }, failure: { error in

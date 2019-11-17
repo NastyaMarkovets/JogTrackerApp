@@ -47,6 +47,8 @@ class JogsViewController: UIViewController {
         checkUserIsAuthorized()
         checkExistingJogs()
         registerNib()
+        
+        jogsViewModel.getExistingJogs()
     }
     
     private func addSubviews() {
@@ -94,7 +96,7 @@ class JogsViewController: UIViewController {
 
 extension JogsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jogsViewModel.existingJogs?.count ?? 0
+        return jogsViewModel.existingJogs?.jogs.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

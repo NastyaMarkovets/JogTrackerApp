@@ -36,12 +36,8 @@ enum JogsApi: JogsBaseApi {
         case .updateExistingJog:
             return ""
         case .syncJogs:
-            return ""
+            return Server.PathComponent.syncJogs
         }
-    }
-
-    var parameters: Parameters? {
-        return nil
     }
     
     var queryParameters: [String: String]? {
@@ -55,6 +51,9 @@ enum JogsApi: JogsBaseApi {
                 "time": String(jog.time),
                 "distance": String(jog.distance),
                 UserAccountManager.accessTokenKey: accessToken]
+        case .syncJogs:
+            guard let accessToken = UserAccountManager.accessToken else { return nil }
+            return [UserAccountManager.accessTokenKey: accessToken]
         default:
             return nil
         }

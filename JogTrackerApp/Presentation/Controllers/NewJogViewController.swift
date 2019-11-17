@@ -191,7 +191,11 @@ class NewJogViewController: UIViewController {
             let time = Int(timeText), !date.isEmpty else { return }
         
         let newJog = Jog(distance: distance, time: time, date: date)
-        jogsViewModel.addNewJog(newJog)
+        jogsViewModel.addNewJog(newJog, success: { [weak self] in
+            self?.remove()
+        }, failure: { error in
+            print(error)
+        })
     }
     
     @objc private func showDataPicker() {

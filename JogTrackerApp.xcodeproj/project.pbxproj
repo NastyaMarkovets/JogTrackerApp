@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
+		3D02A0902381F50000526439 /* JogsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02A08F2381F50000526439 /* JogsList.swift */; };
+		3D02A0922381FA4B00526439 /* ExistingJog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02A0912381FA4B00526439 /* ExistingJog.swift */; };
 		3D03AA2B238172DD007F8BBD /* JogsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2A238172DD007F8BBD /* JogsClient.swift */; };
 		3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2C23817D7B007F8BBD /* Jog.swift */; };
 		3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D02A08F2381F50000526439 /* JogsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsList.swift; sourceTree = "<group>"; };
+		3D02A0912381FA4B00526439 /* ExistingJog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingJog.swift; sourceTree = "<group>"; };
 		3D03AA2A238172DD007F8BBD /* JogsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsClient.swift; sourceTree = "<group>"; };
 		3D03AA2C23817D7B007F8BBD /* Jog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
 		3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			children = (
 				3D90BA70237DCCF80076EACC /* User.swift */,
 				3D03AA2C23817D7B007F8BBD /* Jog.swift */,
+				3D02A0912381FA4B00526439 /* ExistingJog.swift */,
+				3D02A08F2381F50000526439 /* JogsList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,12 +408,14 @@
 				3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */,
 				3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */,
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
+				3D02A0922381FA4B00526439 /* ExistingJog.swift in Sources */,
 				3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */,
 				3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */,
 				3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */,
 				3D90BA71237DCCF90076EACC /* User.swift in Sources */,
 				3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */,
 				3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */,
+				3D02A0902381F50000526439 /* JogsList.swift in Sources */,
 				3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

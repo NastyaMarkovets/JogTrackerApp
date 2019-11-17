@@ -9,13 +9,13 @@
 import Foundation
 
 struct Jog: Codable {
-    let id: Int
-    let userId: String
+    let id: Int?
+    let userId: String?
     let distance: Float
     let time: Int
     let date: String
     
-    init(id: Int, userId: String, distance: Float, time: Int, date: String) {
+    init(id: Int? = nil, userId: String? = nil, distance: Float, time: Int, date: String) {
         self.id = id
         self.userId = userId
         self.distance = distance

@@ -19,6 +19,8 @@ class AuthorizationView: UIView {
         static let borderWidth: CGFloat = 3
         static let sideInset: CGFloat = 110
         static let spacing: CGFloat = 103
+        static let bottomInset: CGFloat = 136
+        static let iconWidth: CGFloat = 160
     }
     
     private let iconImageView: UIImageView = {
@@ -47,13 +49,14 @@ class AuthorizationView: UIView {
         addSubview(letMeInButton)
         
         iconImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(Dimensions.sideInset)
+            $0.top.greaterThanOrEqualToSuperview()
+            $0.width.equalTo(Dimensions.iconWidth)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(letMeInButton.snp.top).offset(-Dimensions.spacing)
         }
         letMeInButton.snp.makeConstraints {
-            $0.top.equalTo(iconImageView.snp.bottom).offset(Dimensions.spacing)
             $0.leading.trailing.equalTo(iconImageView)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(Dimensions.bottomInset)
         }
         
         letMeInButton.addTarget(self, action: #selector(authorize), for: .touchUpInside)

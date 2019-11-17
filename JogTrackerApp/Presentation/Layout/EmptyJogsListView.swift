@@ -15,7 +15,7 @@ protocol FirstJogCreatingProtocol: class {
 class EmptyJogsListView: UIView {
 
     private enum Dimensions {
-        static let iconHeight: CGFloat = 86
+        static let iconWidth: CGFloat = 86
         static let buttonInset: CGFloat = 62
         static let bottomInset: CGFloat = 71
         static let contentSpacing: CGFloat = 30
@@ -59,7 +59,8 @@ class EmptyJogsListView: UIView {
         
         iconImageView.snp.makeConstraints {
             $0.top.greaterThanOrEqualToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(Dimensions.iconSpacing)
+            $0.width.equalTo(Dimensions.iconWidth)
+            $0.centerX.equalToSuperview()
             $0.bottom.equalTo(nothingIsThereLabel.snp.top).offset(-Dimensions.contentSpacing)
         }
         nothingIsThereLabel.snp.makeConstraints {

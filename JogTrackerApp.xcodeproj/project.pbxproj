@@ -14,6 +14,7 @@
 		3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */; };
 		3D03AA312381822C007F8BBD /* JogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */; };
 		3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */; };
+		3D03AA392381A51E007F8BBD /* NewJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA382381A51E007F8BBD /* NewJogViewController.swift */; };
 		3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */; };
 		3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCD238084FB006980B9 /* CustomButton.swift */; };
 		3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */; };
@@ -41,6 +42,7 @@
 		3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA8F237F41B90076EACC /* JogsViewController.swift */; };
 		3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */; };
 		3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA93237F4B580076EACC /* InfoViewController.swift */; };
+		3DC7D1772381BD0E009B9173 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
 		3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogTableViewCell.xib; sourceTree = "<group>"; };
 		3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJogsListView.swift; sourceTree = "<group>"; };
+		3D03AA382381A51E007F8BBD /* NewJogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJogViewController.swift; sourceTree = "<group>"; };
 		3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		3D87CDCD238084FB006980B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		3D90BA8F237F41B90076EACC /* JogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewController.swift; sourceTree = "<group>"; };
 		3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3D90BA93237F4B580076EACC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.debug.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -227,6 +231,8 @@
 				3D90BA72237DDA140076EACC /* MainViewController.swift */,
 				3D90BA78237DEECB0076EACC /* MenuViewController.swift */,
 				3D90BA8F237F41B90076EACC /* JogsViewController.swift */,
+				3D03AA382381A51E007F8BBD /* NewJogViewController.swift */,
+				3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */,
 				3D90BA93237F4B580076EACC /* InfoViewController.swift */,
 			);
 			path = Controllers;
@@ -377,7 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */,
+				3D03AA392381A51E007F8BBD /* NewJogViewController.swift in Sources */,
 				3D90BA62237DB6400076EACC /* JogsViewModel.swift in Sources */,
+				3DC7D1772381BD0E009B9173 /* DatePickerViewController.swift in Sources */,
 				3D90BA54237DB6320076EACC /* JogsApi.swift in Sources */,
 				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
 				3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */,

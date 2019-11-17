@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NewControllerProtocol: class {
+    func addNew(controller: UIViewController)
+}
+
 class JogsViewController: UIViewController {
     
     private enum Dimensions {
@@ -22,13 +26,14 @@ class JogsViewController: UIViewController {
         button.backgroundColor = .white
         button.layer.cornerRadius = Dimensions.addButtonSize / 2
         button.adjustsImageWhenHighlighted = false
-        button.addTarget(self, action: #selector(didTapedAddButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addNewJog), for: .touchUpInside)
         return button
     }()
     
     private let tableView = UITableView()
     private let authorizationView = AuthorizationView()
     private let emptyJogsListView = EmptyJogsListView()
+    weak var newControllerDelegate: NewControllerProtocol?
     private let jogsViewModel = JogsViewModel()
 
     override func viewDidLoad() {
@@ -53,8 +58,7 @@ class JogsViewController: UIViewController {
     
     private func setupConstraints() {
         authorizationView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.centerY.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         emptyJogsListView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -82,8 +86,9 @@ class JogsViewController: UIViewController {
         tableView.register(UINib(nibName: JogTableViewCell.identifier(), bundle: nil), forCellReuseIdentifier: JogTableViewCell.identifier())
     }
     
-    @objc private func didTapedAddButton() {
-        
+    @objc private func addNewJog() {
+        let newJogViewController = NewJogViewController()
+        newControllerDelegate?.addNew(controller: newJogViewController)
     }
 }
 
@@ -117,6 +122,6 @@ extension JogsViewController: AuthorizathionButtonProtocol {
 
 extension JogsViewController: FirstJogCreatingProtocol {
     func createJogFirst() {
-        didTapedAddButton()
+        addNewJog()
     }
 }

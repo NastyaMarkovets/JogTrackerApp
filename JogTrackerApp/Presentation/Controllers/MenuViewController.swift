@@ -18,6 +18,7 @@ class MenuViewController: UIViewController {
         static let cellHeight: CGFloat = 71
         static let tableViewMultiplier: CGFloat = 0.8
     }
+    
     private enum MenuItem: String, CaseIterable {
         case jogs = "Jogs"
         case info = "Info"
@@ -27,12 +28,14 @@ class MenuViewController: UIViewController {
             return MenuItem.allCases.firstIndex { self == $0 }
         }
     }
-    private let customNavigationBar = CustomNavigationBar()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         return tableView
     }()
+    
+    private let customNavigationBar = CustomNavigationBar()
     private let menuItems = MenuItem.allCases
     private var selectedMenuItem: MenuItem = .jogs
     weak var menuItemsSelectionDelegate: MenuItemsSelectionProtocol?

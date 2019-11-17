@@ -10,7 +10,7 @@ import Alamofire
 
 struct Server {
     struct Production {
-        static let baseURL = "https://jogtracker.herokuapp.com/api/v1"
+        static let baseURL = "https://jogtracker.herokuapp.com/api/v1/"
     }
     
     struct PathComponent {
@@ -33,14 +33,27 @@ protocol NetworkRouter: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     var parameters: Parameters? { get }
+    var queryParameters: [String: String]? { get }
 }
 
 
 extension NetworkRouter {
 
     func asURLRequest() throws -> URLRequest {
-        let url = try Server.Production.baseURL.asURL()
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        let baseUrl = Server.Production.baseURL.appending(path)
+        
+        var urlComponents = URLComponents(string: baseUrl)
+        var queryItems: [URLQueryItem] = []
+        queryParameters?.forEach { parameter in
+            let queryItem = URLQueryItem(name: parameter.key, value: parameter.value)
+            queryItems.append(queryItem)
+        }
+        urlComponents?.queryItems = queryItems
+        
+        guard let url = urlComponents?.url else {
+            throw AFError.parameterEncodingFailed(reason: .missingURL)
+        }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         
         urlRequest.setValue(ContentType.formUrlencoded.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)

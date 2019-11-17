@@ -42,11 +42,18 @@ enum AuthorizationRouter: NetworkRouter {
 
     var parameters: Parameters? {
         switch self {
+        case .syncJogs:
+            guard let accessToken = UserAccountManager.accessToken else { return nil }
+            return [UserAccountManager.accessTokenKey: accessToken]
+        default:
+            return nil
+        }
+    }
+    
+    var queryParameters: [String: String]? {
+        switch self {
         case .login(let uuid):
             return ["uuid" : uuid]
-        case .syncJogs:
-            guard let accessToken = UserAccountManager.getAccountToken() else { return nil }
-            return [UserAccountManager.accessTokenKey: accessToken]
         default:
             return nil
         }

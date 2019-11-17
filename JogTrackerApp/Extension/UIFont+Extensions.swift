@@ -9,24 +9,16 @@
 import UIKit
 
 extension UIFont {
-    
-    enum Monserrat: String {
-        
-        case light = "HelveticaNeue-Light"
-        case regular = "HelveticaNeue-Regular"
-        case bold = "HelveticaNeue-Bold"
-        case medium = "HelveticaNeue-Medium"
-        
-        func of(size: CGFloat) -> UIFont {
-            return UIFont(name: self.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
-        }
-
-    }
 
     struct Base {
-        static let titleFont = UIFont.Monserrat.medium.of(size: 18)
-        static let descriptionFont = UIFont.Monserrat.medium.of(size: 14)
-        static let headerFont = UIFont.Monserrat.medium.of(size: 22)
+        static let titleFont = UIFont.systemFont(ofSize: 25, weight: .bold)
+        static let subTitleFont = UIFont.systemFont(ofSize: 24, weight: .regular)
+        static let buttonFont = UIFont.systemFont(ofSize: 18, weight: .bold)
+        static let jogTextFont = UIFont.systemFont(ofSize: 14, weight: .medium)
+        static let jogSubTextFont = UIFont.systemFont(ofSize: 14, weight: .regular)
+        static let popUpLabelFont = UIFont.systemFont(ofSize: 13, weight: .regular)
+        static let popUpButtonFont = UIFont.systemFont(ofSize: 13, weight: .bold)
+        static let descriptionFont = UIFont.systemFont(ofSize: 12, weight: .regular)
     }
     
 }

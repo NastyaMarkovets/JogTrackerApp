@@ -43,17 +43,20 @@ class CustomNavigationBar: UIView {
         button.addTarget(self, action: #selector(didTapedFilterButton), for: .touchUpInside)
         return button
     }()
+    
     private var filterIsNeeded = false {
         didSet {
             filterButton.isHidden = !filterIsNeeded
         }
     }
+    
     private var filterIsActive = false {
         didSet {
             filterIsActive ? filterButton.setImage(UIImage(named: "filter-active"), for: .normal)
                 : filterButton.setImage(UIImage(named: "filter"), for: .normal)
         }
     }
+    
     weak var rightButtonDelegate: RightButtonActionProtocol?
 
     init() {

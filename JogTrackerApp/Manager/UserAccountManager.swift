@@ -12,13 +12,14 @@ import KeychainSwift
 class UserAccountManager {
     static private let keychain = KeychainSwift()
     static let accessTokenKey = "access_token"
- 
-    static func getAccountToken() -> String? {
-        return keychain.get(accessTokenKey)
-    }
-    
-    static func setAccountToken(_ token: String) {
-        keychain.set(token, forKey: accessTokenKey)
+    static var accessToken: String? {
+        get {
+            return keychain.get(accessTokenKey)
+        }
+        set {
+            guard let accessToken = newValue else { return }
+            keychain.set(accessToken, forKey: accessTokenKey)
+        }
     }
     
     static func deleteAccountToken() {

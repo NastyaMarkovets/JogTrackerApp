@@ -15,6 +15,7 @@ extension UIColor {
         static let textColor = UIColor(70, 67, 71)
         static let appleGreen = UIColor(126, 211, 33)
         static let greyish = UIColor(176, 171, 171)
+        static let babyPurple = UIColor(233, 144, 249)
     }
 
     convenience init(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Double? = 1.0) {

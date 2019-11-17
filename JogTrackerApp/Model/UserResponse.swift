@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct User: Codable {
-    let accessToken: String?
+struct UserResponse: Codable {
+    let accessToken: String
     
     init(accessToken: String) {
         self.accessToken = accessToken

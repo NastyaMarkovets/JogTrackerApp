@@ -11,12 +11,12 @@ import Alamofire
 import BrightFutures
 
 protocol AuthorizationClientProtocol {
-    func login(uuid: String) -> Future<User, NetworkRequestError>
+    func login(uuid: String) -> Future<Response, NetworkRequestError>
 }
 
 class AuthorizationClient: NetworkClient, AuthorizationClientProtocol {
     
-    func login(uuid: String) -> Future<User, NetworkRequestError> {
+    func login(uuid: String) -> Future<Response, NetworkRequestError> {
         return performRequest(route: AuthorizationRouter.login(uuid: uuid))
     }
 

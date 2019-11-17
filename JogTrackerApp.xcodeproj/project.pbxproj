@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
+		3D03AA292381468C007F8BBD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA282381468C007F8BBD /* Response.swift */; };
 		3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */; };
+		3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCD238084FB006980B9 /* CustomButton.swift */; };
+		3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */; };
 		3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA20237DB2E60076EACC /* AppDelegate.swift */; };
 		3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA27237DB2E90076EACC /* Assets.xcassets */; };
 		3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */; };
@@ -24,8 +27,8 @@
 		3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA51237DB6320076EACC /* NetworkClient.swift */; };
 		3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA52237DB6320076EACC /* AuthorizationClient.swift */; };
 		3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */; };
-		3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* LoginPresenter.swift */; };
-		3D90BA71237DCCF90076EACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* User.swift */; };
+		3D90BA62237DB6400076EACC /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */; };
+		3D90BA71237DCCF90076EACC /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* UserResponse.swift */; };
 		3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA72237DDA140076EACC /* MainViewController.swift */; };
 		3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA78237DEECB0076EACC /* MenuViewController.swift */; };
 		3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */; };
@@ -37,7 +40,10 @@
 
 /* Begin PBXFileReference section */
 		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D03AA282381468C007F8BBD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		3D87CDCD238084FB006980B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		3D90BA1D237DB2E60076EACC /* JogTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D90BA20237DB2E60076EACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D90BA27237DB2E90076EACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,8 +61,8 @@
 		3D90BA51237DB6320076EACC /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		3D90BA52237DB6320076EACC /* AuthorizationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationClient.swift; sourceTree = "<group>"; };
 		3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientsFactory.swift; sourceTree = "<group>"; };
-		3D90BA5B237DB6400076EACC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		3D90BA70237DCCF80076EACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		3D90BA70237DCCF80076EACC /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		3D90BA72237DDA140076EACC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D90BA78237DEECB0076EACC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +137,8 @@
 		3D90BA40237DB6140076EACC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA70237DCCF80076EACC /* User.swift */,
+				3D90BA70237DCCF80076EACC /* UserResponse.swift */,
+				3D03AA282381468C007F8BBD /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,7 +193,7 @@
 		3D90BA5A237DB6400076EACC /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA5B237DB6400076EACC /* LoginPresenter.swift */,
+				3D90BA5B237DB6400076EACC /* AuthorizationViewModel.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */,
+				3D87CDCD238084FB006980B9 /* CustomButton.swift */,
+				3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -352,10 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */,
-				3D90BA62237DB6400076EACC /* LoginPresenter.swift in Sources */,
+				3D90BA62237DB6400076EACC /* AuthorizationViewModel.swift in Sources */,
 				3D90BA54237DB6320076EACC /* AuthorizationRouter.swift in Sources */,
 				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
 				3D90BA55237DB6320076EACC /* NetworkRouter.swift in Sources */,
+				3D03AA292381468C007F8BBD /* Response.swift in Sources */,
 				3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */,
 				3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */,
 				3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */,
@@ -365,11 +375,13 @@
 				3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */,
 				3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */,
 				3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */,
+				3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */,
 				3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */,
 				3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */,
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
+				3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */,
 				3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */,
-				3D90BA71237DCCF90076EACC /* User.swift in Sources */,
+				3D90BA71237DCCF90076EACC /* UserResponse.swift in Sources */,
 				3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */,
 				3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */,
 				3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */,

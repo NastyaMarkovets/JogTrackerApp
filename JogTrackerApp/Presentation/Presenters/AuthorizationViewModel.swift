@@ -8,14 +8,17 @@
 
 import Foundation
 
-class LoginPresenter {
+class AuthorizationViewModel {
     
     private let authorizationClient = NetworkClientsFactory.shared.authorizationClient
-    let userUuid = "hello" //UUID().uuidString
+    //private let userUuid = UUID().uuidString
+    private let mockedUserUuid = "hello"
+    let accessToken = UserAccountManager.accessToken
     
-    func loginUser(success: @escaping(User) -> Void, failure: @escaping(String) -> Void) {
-        authorizationClient.login(uuid: userUuid).onSuccess { user in
-            success(user)
+    func loginUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
+        authorizationClient.login(uuid: mockedUserUuid).onSuccess { response in
+            UserAccountManager.accessToken = response.response.accessToken
+            success()
         }.onFailure { error in
             switch error {
             case .networkRequestFailed:

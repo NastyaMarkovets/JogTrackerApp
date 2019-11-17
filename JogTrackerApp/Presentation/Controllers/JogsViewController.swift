@@ -9,9 +9,42 @@
 import UIKit
 
 class JogsViewController: UIViewController {
+    
+    private let authorizationView = AuthorizationView()
+    private let authorizationViewModel = AuthorizationViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubviews()
+        setupConstraints()
+        authorizationView.authorizationButtonDelegate = self
+        checkUserIsAuthorized()
     }
+    
+    private func addSubviews() {
+        view.addSubview(authorizationView)
+    }
+    
+    private func setupConstraints() {
+        authorizationView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
+    }
+    
+    private func checkUserIsAuthorized() {
+        let isAuthorized = authorizationViewModel.accessToken != nil
+        authorizationView.isHidden = isAuthorized
+    }
+}
 
+extension JogsViewController: AuthorizathionButtonProtocol {
+    func clickAuthorization() {
+        authorizationViewModel.loginUser(success: { [weak self] in
+            guard let self = self else { return }
+            self.authorizationView.isHidden = true
+        }, failure: { error in
+            print(error)
+        })
+    }
 }

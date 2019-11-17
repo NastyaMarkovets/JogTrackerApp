@@ -12,8 +12,8 @@ import SnapKit
 extension UIViewController {
     
     func add(_ child: UIViewController, contentView: UIView? = nil) {
-        let aView = contentView != nil ? contentView : self.view
-        guard let view = aView else {
+        let contentView = contentView != nil ? contentView : self.view
+        guard let view = contentView else {
             return
         }
         addChild(child)

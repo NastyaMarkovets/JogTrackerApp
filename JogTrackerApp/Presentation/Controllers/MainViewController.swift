@@ -13,9 +13,9 @@ class MainViewController: UIViewController {
     
     private let customNavigationBar = CustomNavigationBar()
     private let contentView = UIView()
-    private var mainViewController: UIViewController = JogsViewController()
     private let menuViewController = MenuViewController()
-    
+    var rootViewController: UIViewController = JogsViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.Base.backgroundColor
@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     }
     
     private func addRootViewController() {
-        add(mainViewController, contentView: contentView)
+        add(rootViewController, contentView: contentView)
     }
     
     private func addSubviews() {
@@ -48,8 +48,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MenuItemsSelectionProtocol {
     func didSelectMenu(item: UIViewController) {
-        mainViewController.remove()
-        mainViewController = item
+        rootViewController.remove()
+        rootViewController = item
         add(item, contentView: contentView)
     }
 }

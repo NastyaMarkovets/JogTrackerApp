@@ -10,6 +10,7 @@ import Foundation
 
 class JogsViewModel {
     private let authorizationClient = NetworkClientsFactory.shared.authorizationClient
+    private let jogsClient = NetworkClientsFactory.shared.jogsClient
     //private let userUuid = UUID().uuidString
     private let mockedUserUuid = "hello"
     let accessToken = UserAccountManager.accessToken
@@ -17,7 +18,7 @@ class JogsViewModel {
     
     func authorizeUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
         authorizationClient.authorize(uuid: mockedUserUuid).onSuccess { response in
-            UserAccountManager.accessToken = response.response.accessToken
+            UserAccountManager.accessToken = response.accessToken
             success()
         }.onFailure { error in
             switch error {
@@ -28,4 +29,18 @@ class JogsViewModel {
             }
         }
     }
+    
+    func addNewJog(_ jog: Jog) {
+        jogsClient.addNewJog(jog: jog).onSuccess { jog in
+            print(jog)
+        }.onFailure { error in
+            switch error {
+            case .networkRequestFailed:
+                print("An error occurred in the application. Try again.")
+            case .tokenExpired:
+                print("Login failed. Please log in again.")
+            }
+        }
+    }
+    
 }

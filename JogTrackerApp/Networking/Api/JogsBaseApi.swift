@@ -15,6 +15,7 @@ struct Server {
     
     struct PathComponent {
         static let auth = "auth/uuidLogin"
+        static let jog = "data/jog"
     }
 }
 

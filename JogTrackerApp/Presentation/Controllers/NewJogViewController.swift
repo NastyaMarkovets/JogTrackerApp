@@ -22,6 +22,7 @@ class NewJogViewController: UIViewController {
     private let contentView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Base.appleGreen
+        view.isHidden = true
         view.layer.cornerRadius = 29
         return view
     }()
@@ -108,6 +109,13 @@ class NewJogViewController: UIViewController {
         tapsSetup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.transition(with: contentView, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            self.contentView.isHidden = false
+        })
+    }
+    
     private func tapsSetup() {
         let tapAround = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapAround.cancelsTouchesInView = false
@@ -183,7 +191,7 @@ class NewJogViewController: UIViewController {
             let time = Int(timeText), !date.isEmpty else { return }
         
         let newJog = Jog(distance: distance, time: time, date: date)
-        
+        jogsViewModel.addNewJog(newJog)
     }
     
     @objc private func showDataPicker() {

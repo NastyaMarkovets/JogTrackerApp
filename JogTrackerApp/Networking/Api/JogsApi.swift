@@ -11,14 +11,14 @@ import Alamofire
 
 enum JogsApi: JogsBaseApi {    
 
-    case login(uuid: String)
-    case addNewJog
+    case authorize(uuid: String)
+    case addNewJog(jog: Jog)
     case updateExistingJog
     case syncJogs
 
     var method: HTTPMethod {
         switch self {
-        case .login, .addNewJog:
+        case .authorize, .addNewJog:
             return .post
         case .updateExistingJog:
             return .put
@@ -29,10 +29,10 @@ enum JogsApi: JogsBaseApi {
 
     var path: String {
         switch self {
-        case .login:
+        case .authorize:
             return Server.PathComponent.auth
         case .addNewJog:
-            return ""
+            return Server.PathComponent.jog
         case .updateExistingJog:
             return ""
         case .syncJogs:
@@ -41,19 +41,20 @@ enum JogsApi: JogsBaseApi {
     }
 
     var parameters: Parameters? {
-        switch self {
-        case .syncJogs:
-            guard let accessToken = UserAccountManager.accessToken else { return nil }
-            return [UserAccountManager.accessTokenKey: accessToken]
-        default:
-            return nil
-        }
+        return nil
     }
     
     var queryParameters: [String: String]? {
         switch self {
-        case .login(let uuid):
+        case .authorize(let uuid):
             return ["uuid" : uuid]
+        case .addNewJog(let jog):
+            guard let accessToken = UserAccountManager.accessToken else { return nil }
+            return [
+                "date": jog.date,
+                "time": String(jog.time),
+                "distance": String(jog.distance),
+                UserAccountManager.accessTokenKey: accessToken]
         default:
             return nil
         }

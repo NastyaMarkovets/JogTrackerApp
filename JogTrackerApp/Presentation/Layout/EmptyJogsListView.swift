@@ -38,6 +38,7 @@ class EmptyJogsListView: UIView {
         return label
     }()
     
+    private let contentView = UIView()
     private let createJogButton = CustomButton(title: "Create your jog first")
     weak var firstJogCreatingDelegate: FirstJogCreatingProtocol?
     
@@ -53,12 +54,16 @@ class EmptyJogsListView: UIView {
     private func prepareView() {
         backgroundColor = .white
         
-        addSubview(iconImageView)
-        addSubview(nothingIsThereLabel)
-        addSubview(createJogButton)
+        addSubview(contentView)
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(nothingIsThereLabel)
+        contentView.addSubview(createJogButton)
         
+        contentView.snp.makeConstraints {
+            $0.leading.trailing.centerY.equalToSuperview()
+        }
         iconImageView.snp.makeConstraints {
-            $0.top.greaterThanOrEqualToSuperview()
+            $0.top.equalToSuperview()
             $0.width.equalTo(Dimensions.iconWidth)
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(nothingIsThereLabel.snp.top).offset(-Dimensions.contentSpacing)
@@ -69,7 +74,7 @@ class EmptyJogsListView: UIView {
         }
         createJogButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(Dimensions.buttonInset)
-            $0.bottom.equalToSuperview().inset(Dimensions.bottomInset)
+            $0.bottom.equalToSuperview()
         }
         
         createJogButton.addTarget(self, action: #selector(createNewJog), for: .touchUpInside)

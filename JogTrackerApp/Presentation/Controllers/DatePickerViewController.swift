@@ -31,7 +31,6 @@ class DatePickerViewController: UIViewController {
         button.setTitle("Done", for: .normal)
         button.backgroundColor = .white
         button.setTitleColor(UIColor.Base.appleGreen, for: .normal)
-        button.addTarget(self, action: #selector(didTappedDone), for: .touchUpInside)
         return button
     }()
     
@@ -50,6 +49,7 @@ class DatePickerViewController: UIViewController {
         view.backgroundColor = .clear
         addSubviews()
         setupConstraints()
+        doneButton.addTarget(self, action: #selector(didTappedDone), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,9 +64,12 @@ class DatePickerViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         if touch?.view != datePicker {
-            dismiss(animated: true, completion: nil)
-            view.backgroundColor = .clear
+            dismissPickerView()
         }
+    }
+    
+    private func dismissPickerView() {
+        dismiss(animated: true, completion: nil)
     }
     
     private func addSubviews() {
@@ -96,7 +99,7 @@ class DatePickerViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let dateString = dateFormatter.string(from: datePicker.date)
         dateSelectionDelegate?.didSelect(date: dateString)
-        dismiss(animated: true, completion: nil)
+        dismissPickerView()
     }
 
 }

@@ -30,6 +30,7 @@ class AuthorizationView: UIView {
         return imageView
     }()
     
+    private let contentView = UIView()
     private let letMeInButton = CustomButton(title: "Let me in")
     weak var authorizationButtonDelegate: AuthorizathionButtonProtocol?
     
@@ -44,19 +45,22 @@ class AuthorizationView: UIView {
     
     private func prepareView() {
         backgroundColor = .white
+        addSubview(contentView)
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(letMeInButton)
         
-        addSubview(iconImageView)
-        addSubview(letMeInButton)
-        
+        contentView.snp.makeConstraints {
+            $0.leading.trailing.centerY.equalToSuperview()
+        }
         iconImageView.snp.makeConstraints {
-            $0.top.greaterThanOrEqualToSuperview()
+            $0.top.equalToSuperview()
             $0.width.equalTo(Dimensions.iconWidth)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(letMeInButton.snp.top).offset(-Dimensions.spacing)
         }
         letMeInButton.snp.makeConstraints {
+            $0.top.equalTo(iconImageView.snp.bottom).offset(Dimensions.spacing)
             $0.leading.trailing.equalTo(iconImageView)
-            $0.bottom.equalToSuperview().inset(Dimensions.bottomInset)
+            $0.bottom.equalToSuperview()
         }
         
         letMeInButton.addTarget(self, action: #selector(authorize), for: .touchUpInside)

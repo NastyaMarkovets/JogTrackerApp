@@ -10,8 +10,11 @@ import Foundation
 import BrightFutures
 
 protocol JogsClientProtocol {
+    func addNewJog(jog: Jog) -> Future<Jog, NetworkRequestError>
 }
 
 class JogsClient: NetworkClient, JogsClientProtocol {
-    
+    func addNewJog(jog: Jog) -> Future<Jog, NetworkRequestError> {
+        return performRequest(route: JogsApi.addNewJog(jog: jog))
+    }
 }

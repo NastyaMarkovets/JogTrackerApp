@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NewJogProtocol: class {
+    func updateExistingJogs()
+}
+
 class NewJogViewController: UIViewController {
     private enum Dimensions {
         static let buttonHeight: CGFloat = 42
@@ -100,6 +104,7 @@ class NewJogViewController: UIViewController {
     }()
     
     private let jogsViewModel = JogsViewModel()
+    weak var newJogDelegate: NewJogProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -192,6 +197,7 @@ class NewJogViewController: UIViewController {
         
         let newJog = Jog(distance: distance, time: time, date: date)
         jogsViewModel.addNewJog(newJog, success: { [weak self] in
+            self?.newJogDelegate?.updateExistingJogs()
             self?.remove()
         }, failure: { error in
             print(error)

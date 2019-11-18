@@ -14,7 +14,6 @@ class JogsViewModel {
     //private let userUuid = UUID().uuidString
     private let mockedUserUuid = "hello"
     let accessToken = UserAccountManager.accessToken
-    var existingJogs: JogsList?
     
     func authorizeUser(success: @escaping() -> Void, failure: @escaping(String) -> Void) {
         authorizationClient.authorize(uuid: mockedUserUuid).onSuccess { response in
@@ -31,7 +30,7 @@ class JogsViewModel {
     }
     
     func addNewJog(_ jog: Jog, success: @escaping() -> Void, failure: @escaping(String) -> Void) {
-        jogsClient.addNewJog(jog: jog).onSuccess { [weak self] jog in
+        jogsClient.addNewJog(jog: jog).onSuccess { _ in
             success()
         }.onFailure { error in
             switch error {
@@ -43,18 +42,12 @@ class JogsViewModel {
         }
     }
     
-    func getExistingJogs() {
-        guard existingJogs == nil else { return }
-        jogsClient.getExistingJogs().onSuccess { [weak self] jogs in
-            self?.existingJogs = jogs
-        }.onFailure { error in
-            switch error {
-            case .networkRequestFailed:
-                print("An error occurred in the application. Try again.")
-            case .tokenExpired:
-                print("Login failed. Please log in again.")
-            }
-        }
+    func getExistingJogs(success: @escaping(JogsList?) -> Void, failure: @escaping(String) -> Void) {
+        DataManager.shared.getExistingJogs(success: { jogs in
+            success(jogs)
+        }, failure: { error in
+            failure(error)
+        })
     }
     
 }

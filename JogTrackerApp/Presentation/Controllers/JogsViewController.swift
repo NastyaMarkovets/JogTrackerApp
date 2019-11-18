@@ -30,25 +30,42 @@ class JogsViewController: UIViewController {
         return button
     }()
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+      let indicator = UIActivityIndicatorView()
+      indicator.backgroundColor = .white
+      indicator.hidesWhenStopped = true
+      indicator.style = .gray
+      return indicator
+    }()
+    
     private let tableView = UITableView()
     private let authorizationView = AuthorizationView()
     private let emptyJogsListView = EmptyJogsListView()
     weak var newControllerDelegate: NewControllerProtocol?
     private let jogsViewModel = JogsViewModel()
+    var existingJogs: JogsList? {
+        didSet {
+            tableView.reloadData()
+            checkExistingJogs()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         setupConstraints()
+        activityIndicator.startAnimating()
         tableView.delegate = self
         tableView.dataSource = self
         authorizationView.authorizationButtonDelegate = self
         emptyJogsListView.firstJogCreatingDelegate = self
         checkUserIsAuthorized()
-        checkExistingJogs()
-        registerNib()
-        
-        jogsViewModel.getExistingJogs()
+        registerNib()        
+        getExistingJogs()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func addSubviews() {
@@ -56,6 +73,7 @@ class JogsViewController: UIViewController {
         view.addSubview(addJogButton)
         view.addSubview(emptyJogsListView)
         view.addSubview(authorizationView)
+        view.addSubview(activityIndicator)
     }
     
     private func setupConstraints() {
@@ -68,10 +86,24 @@ class JogsViewController: UIViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        activityIndicator.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         addJogButton.snp.makeConstraints {
             $0.trailing.bottom.equalToSuperview().inset(Dimensions.contentInset)
             $0.height.width.equalTo(Dimensions.addButtonSize)
         }
+    }
+    
+    private func getExistingJogs() {
+        jogsViewModel.getExistingJogs(success: { [weak self] jogs in
+            guard let self = self else { return }
+            self.existingJogs = jogs
+            self.activityIndicator.stopAnimating()
+        }, failure: { error in
+            self.activityIndicator.stopAnimating()
+            print(error)
+        })
     }
     
     private func checkUserIsAuthorized() {
@@ -80,7 +112,7 @@ class JogsViewController: UIViewController {
     }
     
     private func checkExistingJogs() {
-        let isEmptyJogsList = jogsViewModel.existingJogs == nil
+        let isEmptyJogsList = existingJogs == nil
         emptyJogsListView.isHidden = !isEmptyJogsList
     }
     
@@ -90,19 +122,21 @@ class JogsViewController: UIViewController {
     
     @objc private func addNewJog() {
         let newJogViewController = NewJogViewController()
+        newJogViewController.newJogDelegate = self
         newControllerDelegate?.addNew(controller: newJogViewController)
     }
 }
 
 extension JogsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jogsViewModel.existingJogs?.jogs.count ?? 0
+        return existingJogs?.jogs.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: JogTableViewCell.identifier(), for: indexPath) as? JogTableViewCell else {
             return UITableViewCell()
         }
+        cell.jogInfo = existingJogs?.jogs[indexPath.row]
         return cell
     }
     
@@ -125,5 +159,14 @@ extension JogsViewController: AuthorizathionButtonProtocol {
 extension JogsViewController: FirstJogCreatingProtocol {
     func createJogFirst() {
         addNewJog()
+    }
+}
+
+extension JogsViewController: NewJogProtocol {
+    func updateExistingJogs() {
+        existingJogs = nil
+        DataManager.shared.clearExistingJogs()
+        activityIndicator.startAnimating()
+        getExistingJogs()
     }
 }

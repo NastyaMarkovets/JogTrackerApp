@@ -15,10 +15,11 @@ class JogTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var jogInfo: Jog? {
+    var jogInfo: ExistingJog? {
         didSet {
             guard let jog = jogInfo else { return }
-            dateLabel.text = jog.date
+            let date = Date(milliseconds: Int64(jog.date))
+            dateLabel.text = date.getStringFromDate()
             speedLabel.text = "\(jog.distance / Float(jog.time))"
             distanceLabel.text = "\(jog.distance) km"
             timeLabel.text = "\(jog.time) min"

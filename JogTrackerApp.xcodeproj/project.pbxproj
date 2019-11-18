@@ -44,6 +44,8 @@
 		3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */; };
 		3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA93237F4B580076EACC /* InfoViewController.swift */; };
 		3DC7D1772381BD0E009B9173 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */; };
+		881662002382AA63004470FF /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881661FF2382AA63004470FF /* Date+extensions.swift */; };
+		881662022382BD26004470FF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881662012382BD26004470FF /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		3D90BA93237F4B580076EACC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.debug.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		881661FF2382AA63004470FF /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		881662012382BD26004470FF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */,
+				881661FF2382AA63004470FF /* Date+extensions.swift */,
 				3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */,
 				3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */,
 				3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */,
@@ -165,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3D90BA49237DB6280076EACC /* UserAccountManager.swift */,
+				881662012382BD26004470FF /* DataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -394,9 +400,11 @@
 				3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */,
 				3D90BA55237DB6320076EACC /* JogsBaseApi.swift in Sources */,
 				3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */,
+				881662022382BD26004470FF /* DataManager.swift in Sources */,
 				3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */,
 				3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */,
 				3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */,
+				881662002382AA63004470FF /* Date+extensions.swift in Sources */,
 				3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */,
 				3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */,
 				3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */,

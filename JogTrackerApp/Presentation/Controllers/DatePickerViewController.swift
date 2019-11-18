@@ -95,10 +95,7 @@ class DatePickerViewController: UIViewController {
     }
     
     @objc private func didTappedDone() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        let dateString = dateFormatter.string(from: datePicker.date)
-        dateSelectionDelegate?.didSelect(date: dateString)
+        dateSelectionDelegate?.didSelect(date: datePicker.date.getStringFromDate())
         dismissPickerView()
     }
 

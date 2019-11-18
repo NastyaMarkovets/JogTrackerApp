@@ -3,25 +3,91 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */; };
+		3D02A0902381F50000526439 /* JogsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02A08F2381F50000526439 /* JogsList.swift */; };
+		3D02A0922381FA4B00526439 /* ExistingJog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02A0912381FA4B00526439 /* ExistingJog.swift */; };
+		3D03AA2B238172DD007F8BBD /* JogsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2A238172DD007F8BBD /* JogsClient.swift */; };
+		3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2C23817D7B007F8BBD /* Jog.swift */; };
+		3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */; };
+		3D03AA312381822C007F8BBD /* JogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */; };
+		3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */; };
+		3D03AA392381A51E007F8BBD /* NewJogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA382381A51E007F8BBD /* NewJogViewController.swift */; };
+		3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */; };
+		3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCD238084FB006980B9 /* CustomButton.swift */; };
+		3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */; };
 		3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA20237DB2E60076EACC /* AppDelegate.swift */; };
-		3D90BA23237DB2E60076EACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA22237DB2E60076EACC /* ViewController.swift */; };
-		3D90BA26237DB2E60076EACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA24237DB2E60076EACC /* Main.storyboard */; };
 		3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA27237DB2E90076EACC /* Assets.xcassets */; };
 		3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */; };
+		3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */; };
+		3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */; };
+		3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */; };
+		3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */; };
+		3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA37237DB5B60076EACC /* DeviceType.swift */; };
+		3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA38237DB5B60076EACC /* KeyboardListener.swift */; };
+		3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA49237DB6280076EACC /* UserAccountManager.swift */; };
+		3D90BA54237DB6320076EACC /* JogsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA4E237DB6320076EACC /* JogsApi.swift */; };
+		3D90BA55237DB6320076EACC /* JogsBaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA4F237DB6320076EACC /* JogsBaseApi.swift */; };
+		3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA51237DB6320076EACC /* NetworkClient.swift */; };
+		3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA52237DB6320076EACC /* AuthorizationClient.swift */; };
+		3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */; };
+		3D90BA62237DB6400076EACC /* JogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA5B237DB6400076EACC /* JogsViewModel.swift */; };
+		3D90BA71237DCCF90076EACC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA70237DCCF80076EACC /* User.swift */; };
+		3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA72237DDA140076EACC /* MainViewController.swift */; };
+		3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA78237DEECB0076EACC /* MenuViewController.swift */; };
+		3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */; };
+		3D90BA81237F2AE60076EACC /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */; };
+		3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA8F237F41B90076EACC /* JogsViewController.swift */; };
+		3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */; };
+		3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90BA93237F4B580076EACC /* InfoViewController.swift */; };
+		3DC7D1772381BD0E009B9173 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.release.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D02A08F2381F50000526439 /* JogsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsList.swift; sourceTree = "<group>"; };
+		3D02A0912381FA4B00526439 /* ExistingJog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingJog.swift; sourceTree = "<group>"; };
+		3D03AA2A238172DD007F8BBD /* JogsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsClient.swift; sourceTree = "<group>"; };
+		3D03AA2C23817D7B007F8BBD /* Jog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
+		3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogTableViewCell.swift; sourceTree = "<group>"; };
+		3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogTableViewCell.xib; sourceTree = "<group>"; };
+		3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJogsListView.swift; sourceTree = "<group>"; };
+		3D03AA382381A51E007F8BBD /* NewJogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJogViewController.swift; sourceTree = "<group>"; };
+		3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		3D87CDCD238084FB006980B9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		3D90BA1D237DB2E60076EACC /* JogTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D90BA20237DB2E60076EACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D90BA22237DB2E60076EACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D90BA25237DB2E60076EACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D90BA27237DB2E90076EACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D90BA2A237DB2E90076EACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D90BA2C237DB2E90076EACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		3D90BA37237DB5B60076EACC /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		3D90BA38237DB5B60076EACC /* KeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardListener.swift; sourceTree = "<group>"; };
+		3D90BA49237DB6280076EACC /* UserAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountManager.swift; sourceTree = "<group>"; };
+		3D90BA4E237DB6320076EACC /* JogsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogsApi.swift; sourceTree = "<group>"; };
+		3D90BA4F237DB6320076EACC /* JogsBaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogsBaseApi.swift; sourceTree = "<group>"; };
+		3D90BA51237DB6320076EACC /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		3D90BA52237DB6320076EACC /* AuthorizationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationClient.swift; sourceTree = "<group>"; };
+		3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientsFactory.swift; sourceTree = "<group>"; };
+		3D90BA5B237DB6400076EACC /* JogsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JogsViewModel.swift; sourceTree = "<group>"; };
+		3D90BA70237DCCF80076EACC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3D90BA72237DDA140076EACC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3D90BA78237DEECB0076EACC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		3D90BA8F237F41B90076EACC /* JogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewController.swift; sourceTree = "<group>"; };
+		3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3D90BA93237F4B580076EACC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTrackerApp.debug.xcconfig"; path = "Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C69367453A6E23F7F1E2482 /* Pods_JogTrackerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +107,8 @@
 			children = (
 				3D90BA1F237DB2E60076EACC /* JogTrackerApp */,
 				3D90BA1E237DB2E60076EACC /* Products */,
+				F577311D21528C3EE7E40E3A /* Pods */,
+				76F9DA1C1E1F1729ED24EDE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +123,150 @@
 		3D90BA1F237DB2E60076EACC /* JogTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
-				3D90BA20237DB2E60076EACC /* AppDelegate.swift */,
-				3D90BA22237DB2E60076EACC /* ViewController.swift */,
-				3D90BA24237DB2E60076EACC /* Main.storyboard */,
-				3D90BA27237DB2E90076EACC /* Assets.xcassets */,
+				3D90BA4C237DB6320076EACC /* Networking */,
+				3D90BA47237DB6280076EACC /* Manager */,
+				3D90BA40237DB6140076EACC /* Model */,
+				3D90BA59237DB6400076EACC /* Presentation */,
+				3D90BA32237DB5B60076EACC /* Extension */,
 				3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */,
+				3D90BA20237DB2E60076EACC /* AppDelegate.swift */,
+				3D90BA27237DB2E90076EACC /* Assets.xcassets */,
 				3D90BA2C237DB2E90076EACC /* Info.plist */,
 			);
 			path = JogTrackerApp;
+			sourceTree = "<group>";
+		};
+		3D90BA32237DB5B60076EACC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA33237DB5B60076EACC /* UIFont+Extensions.swift */,
+				3D90BA34237DB5B60076EACC /* UIColor+Extensions.swift */,
+				3D90BA35237DB5B60076EACC /* Encodable+Extensions.swift */,
+				3D90BA36237DB5B60076EACC /* UITableViewCell+Extension.swift */,
+				3D90BA91237F46B70076EACC /* UIViewController+Extensions.swift */,
+				3D90BA37237DB5B60076EACC /* DeviceType.swift */,
+				3D90BA38237DB5B60076EACC /* KeyboardListener.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D90BA40237DB6140076EACC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA70237DCCF80076EACC /* User.swift */,
+				3D03AA2C23817D7B007F8BBD /* Jog.swift */,
+				3D02A0912381FA4B00526439 /* ExistingJog.swift */,
+				3D02A08F2381F50000526439 /* JogsList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D90BA47237DB6280076EACC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA49237DB6280076EACC /* UserAccountManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3D90BA4C237DB6320076EACC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA4D237DB6320076EACC /* Api */,
+				3D90BA50237DB6320076EACC /* Clients */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		3D90BA4D237DB6320076EACC /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA4E237DB6320076EACC /* JogsApi.swift */,
+				3D90BA4F237DB6320076EACC /* JogsBaseApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		3D90BA50237DB6320076EACC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA51237DB6320076EACC /* NetworkClient.swift */,
+				3D90BA53237DB6320076EACC /* NetworkClientsFactory.swift */,
+				3D90BA52237DB6320076EACC /* AuthorizationClient.swift */,
+				3D03AA2A238172DD007F8BBD /* JogsClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		3D90BA59237DB6400076EACC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA6F237DC1A00076EACC /* Layout */,
+				3D90BA5A237DB6400076EACC /* ViewModels */,
+				3D90BA6E237DC14F0076EACC /* Controllers */,
+				3D90BA5C237DB6400076EACC /* Cells */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3D90BA5A237DB6400076EACC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA5B237DB6400076EACC /* JogsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3D90BA5C237DB6400076EACC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA7E237F2AE60076EACC /* MenuTableViewCell.swift */,
+				3D90BA7F237F2AE60076EACC /* MenuTableViewCell.xib */,
+				3D03AA2E2381822C007F8BBD /* JogTableViewCell.swift */,
+				3D03AA2F2381822C007F8BBD /* JogTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D90BA6E237DC14F0076EACC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D90BA72237DDA140076EACC /* MainViewController.swift */,
+				3D90BA78237DEECB0076EACC /* MenuViewController.swift */,
+				3D90BA8F237F41B90076EACC /* JogsViewController.swift */,
+				3D03AA382381A51E007F8BBD /* NewJogViewController.swift */,
+				3DC7D1762381BD0E009B9173 /* DatePickerViewController.swift */,
+				3D90BA93237F4B580076EACC /* InfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3D90BA6F237DC1A00076EACC /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				3D87CDCB238061E4006980B9 /* CustomNavigationBar.swift */,
+				3D87CDCD238084FB006980B9 /* CustomButton.swift */,
+				3D87CDCF23808C4C006980B9 /* AuthorizationView.swift */,
+				3D03AA3623819932007F8BBD /* EmptyJogsListView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		76F9DA1C1E1F1729ED24EDE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94E34A3860D0D48287058839 /* Pods_JogTrackerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F577311D21528C3EE7E40E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */,
+				039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D90BA2F237DB2E90076EACC /* Build configuration list for PBXNativeTarget "JogTrackerApp" */;
 			buildPhases = (
+				CF87989F3D21576A309D0327 /* [CP] Check Pods Manifest.lock */,
 				3D90BA19237DB2E60076EACC /* Sources */,
 				3D90BA1A237DB2E60076EACC /* Frameworks */,
 				3D90BA1B237DB2E60076EACC /* Resources */,
+				E8486AF8171D853F53E7D192 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +329,100 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D03AA312381822C007F8BBD /* JogTableViewCell.xib in Resources */,
+				3D90BA81237F2AE60076EACC /* MenuTableViewCell.xib in Resources */,
 				3D90BA2B237DB2E90076EACC /* LaunchScreen.storyboard in Resources */,
 				3D90BA28237DB2E90076EACC /* Assets.xcassets in Resources */,
-				3D90BA26237DB2E60076EACC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF87989F3D21576A309D0327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JogTrackerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8486AF8171D853F53E7D192 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JogTrackerApp/Pods-JogTrackerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D90BA19237DB2E60076EACC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D90BA23237DB2E60076EACC /* ViewController.swift in Sources */,
+				3D87CDCC238061E4006980B9 /* CustomNavigationBar.swift in Sources */,
+				3D03AA392381A51E007F8BBD /* NewJogViewController.swift in Sources */,
+				3D90BA62237DB6400076EACC /* JogsViewModel.swift in Sources */,
+				3DC7D1772381BD0E009B9173 /* DatePickerViewController.swift in Sources */,
+				3D90BA54237DB6320076EACC /* JogsApi.swift in Sources */,
+				3D90BA3E237DB5B60076EACC /* KeyboardListener.swift in Sources */,
+				3D03AA302381822C007F8BBD /* JogTableViewCell.swift in Sources */,
+				3D90BA55237DB6320076EACC /* JogsBaseApi.swift in Sources */,
+				3D90BA4B237DB6280076EACC /* UserAccountManager.swift in Sources */,
+				3D90BA3C237DB5B60076EACC /* UITableViewCell+Extension.swift in Sources */,
+				3D90BA56237DB6320076EACC /* NetworkClient.swift in Sources */,
+				3D03AA3723819932007F8BBD /* EmptyJogsListView.swift in Sources */,
+				3D90BA39237DB5B60076EACC /* UIFont+Extensions.swift in Sources */,
+				3D90BA57237DB6320076EACC /* AuthorizationClient.swift in Sources */,
+				3D90BA58237DB6320076EACC /* NetworkClientsFactory.swift in Sources */,
+				3D90BA94237F4B580076EACC /* InfoViewController.swift in Sources */,
+				3D03AA2B238172DD007F8BBD /* JogsClient.swift in Sources */,
+				3D90BA3D237DB5B60076EACC /* DeviceType.swift in Sources */,
+				3D90BA79237DEECB0076EACC /* MenuViewController.swift in Sources */,
+				3D87CDD023808C4C006980B9 /* AuthorizationView.swift in Sources */,
+				3D90BA92237F46B70076EACC /* UIViewController+Extensions.swift in Sources */,
+				3D90BA3B237DB5B60076EACC /* Encodable+Extensions.swift in Sources */,
 				3D90BA21237DB2E60076EACC /* AppDelegate.swift in Sources */,
+				3D02A0922381FA4B00526439 /* ExistingJog.swift in Sources */,
+				3D87CDCE238084FB006980B9 /* CustomButton.swift in Sources */,
+				3D90BA80237F2AE60076EACC /* MenuTableViewCell.swift in Sources */,
+				3D03AA2D23817D7B007F8BBD /* Jog.swift in Sources */,
+				3D90BA71237DCCF90076EACC /* User.swift in Sources */,
+				3D90BA90237F41B90076EACC /* JogsViewController.swift in Sources */,
+				3D90BA73237DDA140076EACC /* MainViewController.swift in Sources */,
+				3D02A0902381F50000526439 /* JogsList.swift in Sources */,
+				3D90BA3A237DB5B60076EACC /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3D90BA24237DB2E60076EACC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D90BA25237DB2E60076EACC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D90BA29237DB2E90076EACC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +552,7 @@
 		};
 		3D90BA30237DB2E90076EACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7328C1DDDADA1FB1D9404443 /* Pods-JogTrackerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,12 +565,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LonelyTreeStd.JogTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3D90BA31237DB2E90076EACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039E885E19A950517DE6A41F /* Pods-JogTrackerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,7 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LonelyTreeStd.JogTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

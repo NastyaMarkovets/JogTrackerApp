@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.0.0-beta.3)
+  - BrightFutures (8.0.0)
+  - KeychainSwift (18.0.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (= 5.0.0-beta.3)
+  - BrightFutures
+  - KeychainSwift
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BrightFutures
+    - KeychainSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
+  KeychainSwift: c46e1438d121e47459fb304ac88c5e058a2a91ed
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 1eca80b83b8d13436cee3909d9e9b5d7824f8bb1
+
+COCOAPODS: 1.8.4

@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     private let customNavigationBar = CustomNavigationBar()
     private let contentView = UIView()
     private let menuViewController = MenuViewController()
-    private var rootViewController: UIViewController = JogsViewController()
+    private var rootViewController: UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,10 @@ class MainViewController: UIViewController {
     }
     
     private func addRootViewController() {
+        let jogsViewController = JogsViewController()
+        jogsViewController.newControllerDelegate = self
+        rootViewController = jogsViewController
+        guard let rootViewController = rootViewController else { return }
         add(rootViewController, contentView: contentView)
     }
     
@@ -48,9 +52,15 @@ class MainViewController: UIViewController {
 
 extension MainViewController: MenuItemsSelectionProtocol {
     func didSelectMenu(item: UIViewController) {
-        rootViewController.remove()
+        rootViewController?.remove()
         rootViewController = item
         add(item, contentView: contentView)
+    }
+}
+
+extension MainViewController: NewControllerProtocol {
+    func addNew(controller: UIViewController) {
+        add(controller, contentView: contentView)
     }
 }
 

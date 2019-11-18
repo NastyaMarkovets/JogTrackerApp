@@ -19,15 +19,18 @@ class AuthorizationView: UIView {
         static let borderWidth: CGFloat = 3
         static let sideInset: CGFloat = 110
         static let spacing: CGFloat = 103
+        static let bottomInset: CGFloat = 136
+        static let iconWidth: CGFloat = 160
     }
     
-    private let bearFaceImageView: UIImageView = {
+    private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "bear-face")
-        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
+    private let contentView = UIView()
     private let letMeInButton = CustomButton(title: "Let me in")
     weak var authorizationButtonDelegate: AuthorizathionButtonProtocol?
     
@@ -41,16 +44,22 @@ class AuthorizationView: UIView {
     }
     
     private func prepareView() {
-        addSubview(bearFaceImageView)
-        addSubview(letMeInButton)
+        backgroundColor = .white
+        addSubview(contentView)
+        contentView.addSubview(iconImageView)
+        contentView.addSubview(letMeInButton)
         
-        bearFaceImageView.snp.makeConstraints {
+        contentView.snp.makeConstraints {
+            $0.leading.trailing.centerY.equalToSuperview()
+        }
+        iconImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(Dimensions.sideInset)
+            $0.width.equalTo(Dimensions.iconWidth)
+            $0.centerX.equalToSuperview()
         }
         letMeInButton.snp.makeConstraints {
-            $0.top.equalTo(bearFaceImageView.snp.bottom).offset(Dimensions.spacing)
-            $0.leading.trailing.equalTo(bearFaceImageView)
+            $0.top.equalTo(iconImageView.snp.bottom).offset(Dimensions.spacing)
+            $0.leading.trailing.equalTo(iconImageView)
             $0.bottom.equalToSuperview()
         }
         

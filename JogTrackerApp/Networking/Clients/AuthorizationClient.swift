@@ -10,13 +10,13 @@ import Foundation
 import BrightFutures
 
 protocol AuthorizationClientProtocol {
-    func authorize(uuid: String) -> Future<Response, NetworkRequestError>
+    func authorize(uuid: String) -> Future<User, NetworkRequestError>
 }
 
 class AuthorizationClient: NetworkClient, AuthorizationClientProtocol {
     
-    func authorize(uuid: String) -> Future<Response, NetworkRequestError> {
-        return performRequest(route: JogsApi.login(uuid: uuid))
+    func authorize(uuid: String) -> Future<User, NetworkRequestError> {
+        return performRequest(route: JogsApi.authorize(uuid: uuid))
     }
 
 }

@@ -29,6 +29,7 @@ class NetworkClient: NetworkClientProtocol {
         return Future { complete in
             AF.request(route).responseDecodable(decoder: decoder,
                                                 completionHandler: { (response: DataResponse<T>) in
+                                                    
                 switch response.result {
                 case .success(let data):
                     complete(.success(data))

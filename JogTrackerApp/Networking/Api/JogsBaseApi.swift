@@ -15,6 +15,8 @@ struct Server {
     
     struct PathComponent {
         static let auth = "auth/uuidLogin"
+        static let jog = "data/jog"
+        static let syncJogs = "data/sync"
     }
 }
 
@@ -32,7 +34,6 @@ enum ContentType: String {
 protocol JogsBaseApi: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
-    var parameters: Parameters? { get }
     var queryParameters: [String: String]? { get }
 }
 
@@ -58,14 +59,6 @@ extension JogsBaseApi {
         
         urlRequest.setValue(ContentType.formUrlencoded.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.accept.rawValue)
-        
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-            }
-        }
             
         return urlRequest
     }
